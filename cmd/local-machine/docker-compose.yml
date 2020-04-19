@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    build:
+      context: ../../
+      dockerfile: ./cmd/local-machine/Dockerfile
+    tty: true
+    ports:
+      - "8080:8080"
+    environment:
+      LANG: ja_JP.UTF-8
+      TZ: Asia/Tokyo
+    volumes:
+      - ../../:/go/src/github.com/MrFuku/shogi-backend
