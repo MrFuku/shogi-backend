@@ -10,5 +10,7 @@ services:
     environment:
       LANG: ja_JP.UTF-8
       TZ: Asia/Tokyo
+      ENV: local
+    env_file: ../../pkg/infrastructure/environment/env/.env.local
     volumes:
       - ../../:/go/src/github.com/MrFuku/shogi-backend
