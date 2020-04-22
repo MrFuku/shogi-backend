@@ -2,16 +2,12 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"os"
-
-	"github.com/labstack/echo"
 )
 
 func main() {
-	e := echo.New()
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, World!")
-	})
-	e.Logger.Fatal(e.Start(fmt.Sprintf(":%s", os.Getenv("PORT"))))
+	routeSetting()
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", os.Getenv("PORT")), nil))
 }
