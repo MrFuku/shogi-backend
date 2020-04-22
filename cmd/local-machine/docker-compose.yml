@@ -1,5 +1,11 @@
 version: '3'
 services:
+  dynamo-admin:
+    image: instructure/dynamo-local-admin
+    ports:
+      - "8008:8000"
+    networks:
+      - network
   web:
     build:
       context: ../../
@@ -11,6 +17,14 @@ services:
       LANG: ja_JP.UTF-8
       TZ: Asia/Tokyo
       ENV: local
+      DYNAMO_ENDPOINT: http://dynamo-admin:8000/
+    depends_on:
+      - dynamo-admin
     env_file: ../../pkg/infrastructure/environment/env/.env.local
     volumes:
       - ../../:/go/src/github.com/MrFuku/shogi-backend
+    networks:
+      - network
+networks:
+  network:
+    driver: bridge
