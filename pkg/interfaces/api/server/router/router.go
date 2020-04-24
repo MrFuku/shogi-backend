@@ -1,12 +1,11 @@
 package router
 
 import (
-	"fmt"
 	"net/http"
+
+	"github.com/MrFuku/shogi-backend/pkg/interfaces/api/server/handler"
 )
 
 func RouteSetting() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello, World!")
-	})
+	http.HandleFunc("/", handler.Hello)
 }
