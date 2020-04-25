@@ -1,11 +1,13 @@
 package usecase
 
+// GreetUseCase インターフェースでは挨拶に関するメソッド群が定義されています
 type GreetUseCase interface {
 	Hello() string
 }
 
-type greetUseCase struct {}
+type greetUseCase struct{}
 
+// NewGreetUseCase は greetUseCase構造体を返します
 func NewGreetUseCase() GreetUseCase {
 	return &greetUseCase{}
 }
