@@ -1,6 +1,6 @@
 package usecase
 
-import "github.com/MrFuku/shogi-backend/domain/model/greeter"
+import "github.com/MrFuku/shogi-backend/pkg/domain/model/greeter"
 
 // GreetUseCase インターフェースでは挨拶に関するメソッド群が定義されています
 type GreetUseCase interface {
