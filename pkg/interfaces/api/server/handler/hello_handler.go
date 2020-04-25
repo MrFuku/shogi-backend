@@ -3,8 +3,11 @@ package handler
 import (
 	"fmt"
 	"net/http"
+
+	"github.com/MrFuku/shogi-backend/pkg/application/usecase"
 )
 
 func Hello(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, World!")
+	greetUseCase := usecase.NewGreetUseCase()
+	fmt.Fprintf(w, greetUseCase.Hello())
 }
