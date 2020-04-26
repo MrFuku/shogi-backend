@@ -9,4 +9,5 @@ import (
 // RouteSetting 関数はルーティングを設定します
 func RouteSetting() {
 	http.HandleFunc("/", handler.Hello)
+	http.HandleFunc("/table", handler.InitBoard)
 }

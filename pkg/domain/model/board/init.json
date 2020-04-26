@@ -1,0 +1,346 @@
+{
+  "table": [
+    [
+      {
+        "type" : 11,
+        "enemy": true
+      },
+      {
+        "type" : 9,
+        "enemy": true
+      },
+      {
+        "type" : 7,
+        "enemy": true
+      },
+      {
+        "type" : 6,
+        "enemy": true
+      },
+      {
+        "type" : 1,
+        "enemy": true
+      },
+      {
+        "type" : 6,
+        "enemy": true
+      },
+      {
+        "type" : 7,
+        "enemy": true
+      },
+      {
+        "type" : 9,
+        "enemy": true
+      },
+      {
+        "type" : 11,
+        "enemy": true
+      }
+    ],
+    [
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 2,
+        "enemy": true
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 4,
+        "enemy": true
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      }
+    ],
+    [
+      {
+        "type" : 13,
+        "enemy": true
+      },
+      {
+        "type" : 13,
+        "enemy": true
+      },
+      {
+        "type" : 13,
+        "enemy": true
+      },
+      {
+        "type" : 13,
+        "enemy": true
+      },
+      {
+        "type" : 13,
+        "enemy": true
+      },
+      {
+        "type" : 13,
+        "enemy": true
+      },
+      {
+        "type" : 13,
+        "enemy": true
+      },
+      {
+        "type" : 13,
+        "enemy": true
+      },
+      {
+        "type" : 13,
+        "enemy": true
+      }
+    ],
+    [
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      }
+    ],
+    [
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      }
+    ],
+    [
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      }
+    ],
+    [
+      {
+        "type" : 13,
+        "enemy": false
+      },
+      {
+        "type" : 13,
+        "enemy": false
+      },
+      {
+        "type" : 13,
+        "enemy": false
+      },
+      {
+        "type" : 13,
+        "enemy": false
+      },
+      {
+        "type" : 13,
+        "enemy": false
+      },
+      {
+        "type" : 13,
+        "enemy": false
+      },
+      {
+        "type" : 13,
+        "enemy": false
+      },
+      {
+        "type" : 13,
+        "enemy": false
+      },
+      {
+        "type" : 13,
+        "enemy": false
+      }
+    ],
+    [
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 4,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      },
+      {
+        "type" : 2,
+        "enemy": false
+      },
+      {
+        "type" : 0,
+        "enemy": false
+      }
+    ],
+    [
+      {
+        "type" : 11,
+        "enemy": false
+      },
+      {
+        "type" : 9,
+        "enemy": false
+      },
+      {
+        "type" : 7,
+        "enemy": false
+      },
+      {
+        "type" : 6,
+        "enemy": false
+      },
+      {
+        "type" : 1,
+        "enemy": false
+      },
+      {
+        "type" : 6,
+        "enemy": false
+      },
+      {
+        "type" : 7,
+        "enemy": false
+      },
+      {
+        "type" : 9,
+        "enemy": false
+      },
+      {
+        "type" : 11,
+        "enemy": false
+      }
+    ]
+  ]
+}
