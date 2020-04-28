@@ -9,5 +9,18 @@ import (
 // RouteSetting 関数はルーティングを設定します
 func RouteSetting() {
 	http.HandleFunc("/", handler.Hello)
-	http.HandleFunc("/table", handler.InitBoard)
+	http.HandleFunc("/table", wrapHandler(handler.InitBoard))
+}
+
+// wrapHandler は汎用的なハンドラをラップするためのハンドラです
+func wrapHandler(fn http.HandlerFunc) http.HandlerFunc {
+	return withCORS(fn)
+}
+
+// withCORS はCORSを許可する処理を内包したハンドラです
+func withCORS(fn http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		fn(w, r)
+	}
 }
