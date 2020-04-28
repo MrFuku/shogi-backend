@@ -4,423 +4,504 @@
       {
         "type": 11,
         "enemy": true,
-        "id": 0
+        "id": 0,
+        "puttableIds": []
       },
       {
         "type": 9,
         "enemy": true,
-        "id": 1
+        "id": 1,
+        "puttableIds": []
       },
       {
         "type": 7,
         "enemy": true,
-        "id": 2
+        "id": 2,
+        "puttableIds": []
       },
       {
         "type": 6,
         "enemy": true,
-        "id": 3
+        "id": 3,
+        "puttableIds": []
       },
       {
         "type": 1,
         "enemy": true,
-        "id": 4
+        "id": 4,
+        "puttableIds": []
       },
       {
         "type": 6,
         "enemy": true,
-        "id": 5
+        "id": 5,
+        "puttableIds": []
       },
       {
         "type": 7,
         "enemy": true,
-        "id": 6
+        "id": 6,
+        "puttableIds": []
       },
       {
         "type": 9,
         "enemy": true,
-        "id": 7
+        "id": 7,
+        "puttableIds": []
       },
       {
         "type": 11,
         "enemy": true,
-        "id": 8
+        "id": 8,
+        "puttableIds": []
       }
     ],
     [
       {
         "type": 0,
         "enemy": false,
-        "id": 10
+        "id": 10,
+        "puttableIds": []
       },
       {
         "type": 2,
         "enemy": true,
-        "id": 11
+        "id": 11,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 12
+        "id": 12,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 13
+        "id": 13,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 14
+        "id": 14,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 15
+        "id": 15,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 16
+        "id": 16,
+        "puttableIds": []
       },
       {
         "type": 4,
         "enemy": true,
-        "id": 17
+        "id": 17,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 18
+        "id": 18,
+        "puttableIds": []
       }
     ],
     [
       {
         "type": 13,
         "enemy": true,
-        "id": 20
+        "id": 20,
+        "puttableIds": []
       },
       {
         "type": 13,
         "enemy": true,
-        "id": 21
+        "id": 21,
+        "puttableIds": []
       },
       {
         "type": 13,
         "enemy": true,
-        "id": 22
+        "id": 22,
+        "puttableIds": []
       },
       {
         "type": 13,
         "enemy": true,
-        "id": 23
+        "id": 23,
+        "puttableIds": []
       },
       {
         "type": 13,
         "enemy": true,
-        "id": 24
+        "id": 24,
+        "puttableIds": []
       },
       {
         "type": 13,
         "enemy": true,
-        "id": 25
+        "id": 25,
+        "puttableIds": []
       },
       {
         "type": 13,
         "enemy": true,
-        "id": 26
+        "id": 26,
+        "puttableIds": []
       },
       {
         "type": 13,
         "enemy": true,
-        "id": 27
+        "id": 27,
+        "puttableIds": []
       },
       {
         "type": 13,
         "enemy": true,
-        "id": 28
+        "id": 28,
+        "puttableIds": []
       }
     ],
     [
       {
         "type": 0,
         "enemy": false,
-        "id": 30
+        "id": 30,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 31
+        "id": 31,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 32
+        "id": 32,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 33
+        "id": 33,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 34
+        "id": 34,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 35
+        "id": 35,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 36
+        "id": 36,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 37
+        "id": 37,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 38
+        "id": 38,
+        "puttableIds": []
       }
     ],
     [
       {
         "type": 0,
         "enemy": false,
-        "id": 40
+        "id": 40,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 41
+        "id": 41,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 42
+        "id": 42,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 43
+        "id": 43,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 44
+        "id": 44,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 45
+        "id": 45,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 46
+        "id": 46,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 47
+        "id": 47,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 48
+        "id": 48,
+        "puttableIds": []
       }
     ],
     [
       {
         "type": 0,
         "enemy": false,
-        "id": 50
+        "id": 50,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 51
+        "id": 51,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 52
+        "id": 52,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 53
+        "id": 53,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 54
+        "id": 54,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 55
+        "id": 55,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 56
+        "id": 56,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 57
+        "id": 57,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 58
+        "id": 58,
+        "puttableIds": []
       }
     ],
     [
       {
         "type": 13,
         "enemy": false,
-        "id": 60
+        "id": 60,
+        "puttableIds": []
       },
       {
         "type": 13,
         "enemy": false,
-        "id": 61
+        "id": 61,
+        "puttableIds": []
       },
       {
         "type": 13,
         "enemy": false,
-        "id": 62
+        "id": 62,
+        "puttableIds": []
       },
       {
         "type": 13,
         "enemy": false,
-        "id": 63
+        "id": 63,
+        "puttableIds": []
       },
       {
         "type": 13,
         "enemy": false,
-        "id": 64
+        "id": 64,
+        "puttableIds": []
       },
       {
         "type": 13,
         "enemy": false,
-        "id": 65
+        "id": 65,
+        "puttableIds": []
       },
       {
         "type": 13,
         "enemy": false,
-        "id": 66
+        "id": 66,
+        "puttableIds": []
       },
       {
         "type": 13,
         "enemy": false,
-        "id": 67
+        "id": 67,
+        "puttableIds": []
       },
       {
         "type": 13,
         "enemy": false,
-        "id": 68
+        "id": 68,
+        "puttableIds": []
       }
     ],
     [
       {
         "type": 0,
         "enemy": false,
-        "id": 70
+        "id": 70,
+        "puttableIds": []
       },
       {
         "type": 4,
         "enemy": false,
-        "id": 71
+        "id": 71,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 72
+        "id": 72,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 73
+        "id": 73,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 74
+        "id": 74,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 75
+        "id": 75,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 76
+        "id": 76,
+        "puttableIds": []
       },
       {
         "type": 2,
         "enemy": false,
-        "id": 77
+        "id": 77,
+        "puttableIds": []
       },
       {
         "type": 0,
         "enemy": false,
-        "id": 78
+        "id": 78,
+        "puttableIds": []
       }
     ],
     [
       {
         "type": 11,
         "enemy": false,
-        "id": 80
+        "id": 80,
+        "puttableIds": []
       },
       {
         "type": 9,
         "enemy": false,
-        "id": 81
+        "id": 81,
+        "puttableIds": []
       },
       {
         "type": 7,
         "enemy": false,
-        "id": 82
+        "id": 82,
+        "puttableIds": []
       },
       {
         "type": 6,
         "enemy": false,
-        "id": 83
+        "id": 83,
+        "puttableIds": []
       },
       {
         "type": 1,
         "enemy": false,
-        "id": 84
+        "id": 84,
+        "puttableIds": []
       },
       {
         "type": 6,
         "enemy": false,
-        "id": 85
+        "id": 85,
+        "puttableIds": []
       },
       {
         "type": 7,
         "enemy": false,
-        "id": 86
+        "id": 86,
+        "puttableIds": []
       },
       {
         "type": 9,
         "enemy": false,
-        "id": 87
+        "id": 87,
+        "puttableIds": []
       },
       {
         "type": 11,
         "enemy": false,
-        "id": 88
+        "id": 88,
+        "puttableIds": []
       }
     ]
   ]
