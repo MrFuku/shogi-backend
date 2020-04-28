@@ -4,6 +4,6 @@ package piece
 type Piece struct {
 	PieceID     int   `json:"pieceId"`
 	PieceType   int   `json:"type"`
-	Enemy       bool  `json:"enemy"`
+	PlayerID    int   `json:"playerId"`
 	PuttableIds []int `json:"puttableIds"`
 }
