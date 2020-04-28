@@ -2,344 +2,506 @@
   "table": [
     [
       {
-        "type" : 11,
-        "enemy": true
+        "type": 11,
+        "playerId": 2,
+        "id": 0,
+        "puttableIds": []
       },
       {
-        "type" : 9,
-        "enemy": true
+        "type": 9,
+        "playerId": 2,
+        "id": 1,
+        "puttableIds": []
       },
       {
-        "type" : 7,
-        "enemy": true
+        "type": 7,
+        "playerId": 2,
+        "id": 2,
+        "puttableIds": []
       },
       {
-        "type" : 6,
-        "enemy": true
+        "type": 6,
+        "playerId": 2,
+        "id": 3,
+        "puttableIds": []
       },
       {
-        "type" : 1,
-        "enemy": true
+        "type": 1,
+        "playerId": 2,
+        "id": 4,
+        "puttableIds": []
       },
       {
-        "type" : 6,
-        "enemy": true
+        "type": 6,
+        "playerId": 2,
+        "id": 5,
+        "puttableIds": []
       },
       {
-        "type" : 7,
-        "enemy": true
+        "type": 7,
+        "playerId": 2,
+        "id": 6,
+        "puttableIds": []
       },
       {
-        "type" : 9,
-        "enemy": true
+        "type": 9,
+        "playerId": 2,
+        "id": 7,
+        "puttableIds": []
       },
       {
-        "type" : 11,
-        "enemy": true
+        "type": 11,
+        "playerId": 2,
+        "id": 8,
+        "puttableIds": []
       }
     ],
     [
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 10,
+        "puttableIds": []
       },
       {
-        "type" : 2,
-        "enemy": true
+        "type": 2,
+        "playerId": 2,
+        "id": 11,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 12,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 13,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 14,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 15,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 16,
+        "puttableIds": []
       },
       {
-        "type" : 4,
-        "enemy": true
+        "type": 4,
+        "playerId": 2,
+        "id": 17,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 18,
+        "puttableIds": []
       }
     ],
     [
       {
-        "type" : 13,
-        "enemy": true
+        "type": 13,
+        "playerId": 2,
+        "id": 20,
+        "puttableIds": []
       },
       {
-        "type" : 13,
-        "enemy": true
+        "type": 13,
+        "playerId": 2,
+        "id": 21,
+        "puttableIds": []
       },
       {
-        "type" : 13,
-        "enemy": true
+        "type": 13,
+        "playerId": 2,
+        "id": 22,
+        "puttableIds": []
       },
       {
-        "type" : 13,
-        "enemy": true
+        "type": 13,
+        "playerId": 2,
+        "id": 23,
+        "puttableIds": []
       },
       {
-        "type" : 13,
-        "enemy": true
+        "type": 13,
+        "playerId": 2,
+        "id": 24,
+        "puttableIds": []
       },
       {
-        "type" : 13,
-        "enemy": true
+        "type": 13,
+        "playerId": 2,
+        "id": 25,
+        "puttableIds": []
       },
       {
-        "type" : 13,
-        "enemy": true
+        "type": 13,
+        "playerId": 2,
+        "id": 26,
+        "puttableIds": []
       },
       {
-        "type" : 13,
-        "enemy": true
+        "type": 13,
+        "playerId": 2,
+        "id": 27,
+        "puttableIds": []
       },
       {
-        "type" : 13,
-        "enemy": true
+        "type": 13,
+        "playerId": 2,
+        "id": 28,
+        "puttableIds": []
       }
     ],
     [
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 30,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 31,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 32,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 33,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 34,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 35,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 36,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 37,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 38,
+        "puttableIds": []
       }
     ],
     [
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 40,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 41,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 42,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 43,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 44,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 45,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 46,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 47,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 48,
+        "puttableIds": []
       }
     ],
     [
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 50,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 51,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 52,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 53,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 54,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 55,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 56,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 57,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 58,
+        "puttableIds": []
       }
     ],
     [
       {
-        "type" : 13,
-        "enemy": false
+        "type": 13,
+        "playerId": 1,
+        "id": 60,
+        "puttableIds": []
       },
       {
-        "type" : 13,
-        "enemy": false
+        "type": 13,
+        "playerId": 1,
+        "id": 61,
+        "puttableIds": []
       },
       {
-        "type" : 13,
-        "enemy": false
+        "type": 13,
+        "playerId": 1,
+        "id": 62,
+        "puttableIds": []
       },
       {
-        "type" : 13,
-        "enemy": false
+        "type": 13,
+        "playerId": 1,
+        "id": 63,
+        "puttableIds": []
       },
       {
-        "type" : 13,
-        "enemy": false
+        "type": 13,
+        "playerId": 1,
+        "id": 64,
+        "puttableIds": []
       },
       {
-        "type" : 13,
-        "enemy": false
+        "type": 13,
+        "playerId": 1,
+        "id": 65,
+        "puttableIds": []
       },
       {
-        "type" : 13,
-        "enemy": false
+        "type": 13,
+        "playerId": 1,
+        "id": 66,
+        "puttableIds": []
       },
       {
-        "type" : 13,
-        "enemy": false
+        "type": 13,
+        "playerId": 1,
+        "id": 67,
+        "puttableIds": []
       },
       {
-        "type" : 13,
-        "enemy": false
+        "type": 13,
+        "playerId": 1,
+        "id": 68,
+        "puttableIds": []
       }
     ],
     [
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 70,
+        "puttableIds": []
       },
       {
-        "type" : 4,
-        "enemy": false
+        "type": 4,
+        "playerId": 1,
+        "id": 71,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 72,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 73,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 74,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 75,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 76,
+        "puttableIds": []
       },
       {
-        "type" : 2,
-        "enemy": false
+        "type": 2,
+        "playerId": 1,
+        "id": 77,
+        "puttableIds": []
       },
       {
-        "type" : 0,
-        "enemy": false
+        "type": 0,
+        "playerId": 0,
+        "id": 78,
+        "puttableIds": []
       }
     ],
     [
       {
-        "type" : 11,
-        "enemy": false
+        "type": 11,
+        "playerId": 1,
+        "id": 80,
+        "puttableIds": []
       },
       {
-        "type" : 9,
-        "enemy": false
+        "type": 9,
+        "playerId": 1,
+        "id": 81,
+        "puttableIds": []
       },
       {
-        "type" : 7,
-        "enemy": false
+        "type": 7,
+        "playerId": 1,
+        "id": 82,
+        "puttableIds": []
       },
       {
-        "type" : 6,
-        "enemy": false
+        "type": 6,
+        "playerId": 1,
+        "id": 83,
+        "puttableIds": []
       },
       {
-        "type" : 1,
-        "enemy": false
+        "type": 1,
+        "playerId": 1,
+        "id": 84,
+        "puttableIds": []
       },
       {
-        "type" : 6,
-        "enemy": false
+        "type": 6,
+        "playerId": 1,
+        "id": 85,
+        "puttableIds": []
       },
       {
-        "type" : 7,
-        "enemy": false
+        "type": 7,
+        "playerId": 1,
+        "id": 86,
+        "puttableIds": []
       },
       {
-        "type" : 9,
-        "enemy": false
+        "type": 9,
+        "playerId": 1,
+        "id": 87,
+        "puttableIds": []
       },
       {
-        "type" : 11,
-        "enemy": false
+        "type": 11,
+        "playerId": 1,
+        "id": 88,
+        "puttableIds": []
       }
     ]
   ]
