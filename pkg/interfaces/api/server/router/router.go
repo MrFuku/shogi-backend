@@ -10,6 +10,7 @@ import (
 func RouteSetting() {
 	http.HandleFunc("/", handler.Hello)
 	http.HandleFunc("/table", wrapHandler(handler.InitBoard))
+	http.HandleFunc("/table/move", wrapHandler(handler.TableMove))
 }
 
 // wrapHandler は汎用的なハンドラをラップするためのハンドラです

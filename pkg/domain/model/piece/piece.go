@@ -10,8 +10,8 @@ type Piece struct {
 
 // Point は将棋盤上の位置を示す構造体です
 type Point struct {
-	Y int
-	X int
+	Y int `json:"y"`
+	X int `json:"x"`
 }
 
 // inRange はPointが将棋盤の範囲内に存在しているかを返すメソッドです
