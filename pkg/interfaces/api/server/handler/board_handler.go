@@ -39,11 +39,24 @@ func TableMove(w http.ResponseWriter, r *http.Request) {
 	}
 	// TODO: リクエストからBoard情報を取得しているが、現状では不正可能なのでDBから取得するようにする
 	board := info.Board
+	if err := move(info, &board); err != nil {
+		// TODO: エラー処理を行う
+	}
 	h, err := json.Marshal(&board)
 	if err != nil {
 		// TODO: エラー処理を行う
 	}
 	fmt.Fprintf(w, string(h))
+}
+
+func move(info MoveInfo, b *board.Board) (err error) {
+	y := info.PieceID / 10
+	x := info.PieceID % 10
+	pi := b.Table[y][x]
+	b.Table[y][x] = piece.Piece{PieceID: 0, PieceType: 0, PlayerID: info.PieceID, PuttableIds: []int{}}
+	pi.PieceID = info.Y*10 + info.X
+	b.Table[info.Y][info.X] = pi
+	return
 }
 
 // extractionMoveInfo はリクエストからMoveInfoを抜き出す関数です
