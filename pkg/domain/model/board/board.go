@@ -22,3 +22,16 @@ func Init() (b *Board, err error) {
 	err = json.Unmarshal(f, b)
 	return
 }
+
+func (b *Board) setPuttableInfo(m *piece.MoveblePoints) {
+	pt := m.PieceType
+	for _, r := range m.Points {
+		for _, p := range r {
+			if b.Table[p.Y][p.X].PieceType != pt {
+				b.Table[p.Y][p.X].PuttableIds = append(b.Table[p.Y][p.X].PuttableIds, m.PieceID)
+			} else {
+				break
+			}
+		}
+	}
+}

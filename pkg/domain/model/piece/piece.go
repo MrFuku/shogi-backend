@@ -7,3 +7,27 @@ type Piece struct {
 	PlayerID    int   `json:"playerId"`
 	PuttableIds []int `json:"puttableIds"`
 }
+
+// Point は将棋盤上の位置を示す構造体です
+type Point struct {
+	Y int
+	X int
+}
+
+// inRange はPointが将棋盤の範囲内に存在しているかを返すメソッドです
+func (p *Point) inRange() bool {
+	if p.Y < 0 || p.X < 0 {
+		return false
+	}
+	if p.Y > 8 || p.X > 8 {
+		return false
+	}
+	return true
+}
+
+// MoveblePoints はある駒が障害物がない時に移動できる位置を示す構造体です
+type MoveblePoints struct {
+	PieceID   int
+	PieceType int
+	Points    [][]Point
+}
