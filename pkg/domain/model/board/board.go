@@ -23,7 +23,7 @@ func Init() (b *Board, err error) {
 	return
 }
 
-func (b *Board) setPuttableInfo(m *piece.MoveblePoints) {
+func (b *Board) setPuttableInfo(m *piece.MovablePoints) {
 	pt := m.PieceType
 	for _, r := range m.Points {
 		for _, p := range r {

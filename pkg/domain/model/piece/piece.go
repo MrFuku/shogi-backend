@@ -25,8 +25,8 @@ func (p *Point) inRange() bool {
 	return true
 }
 
-// MoveblePoints はある駒が障害物がない時に移動できる位置を示す構造体です
-type MoveblePoints struct {
+// MovablePoints はある駒が障害物がない時に移動できる位置を示す構造体です
+type MovablePoints struct {
 	PieceID   int
 	PieceType int
 	Points    [][]Point
