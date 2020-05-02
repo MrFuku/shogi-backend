@@ -45,6 +45,7 @@ func TableMove(w http.ResponseWriter, r *http.Request) {
 	if err := move(info, &board); err != nil {
 		// TODO: エラー処理を行う
 	}
+	board.UpdatePuttableIds(1)
 	h, err := json.Marshal(&board)
 	if err != nil {
 		// TODO: エラー処理を行う

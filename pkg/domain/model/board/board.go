@@ -16,10 +16,13 @@ type Board struct {
 func Init() (b *Board, err error) {
 	f, err := ioutil.ReadFile("pkg/domain/model/board/init.json")
 	if err != nil {
-		return nil, err
+		return
 	}
 	b = &Board{}
-	err = json.Unmarshal(f, b)
+	if err = json.Unmarshal(f, b); err != nil {
+		return
+	}
+	b.UpdatePuttableIds(1)
 	return
 }
 
