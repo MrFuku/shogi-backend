@@ -4,55 +4,55 @@
       {
         "type": 11,
         "playerId": 2,
-        "id": 0,
+        "pieceId": 0,
         "puttableIds": []
       },
       {
         "type": 9,
         "playerId": 2,
-        "id": 1,
+        "pieceId": 1,
         "puttableIds": []
       },
       {
         "type": 7,
         "playerId": 2,
-        "id": 2,
+        "pieceId": 2,
         "puttableIds": []
       },
       {
         "type": 6,
         "playerId": 2,
-        "id": 3,
+        "pieceId": 3,
         "puttableIds": []
       },
       {
         "type": 1,
         "playerId": 2,
-        "id": 4,
+        "pieceId": 4,
         "puttableIds": []
       },
       {
         "type": 6,
         "playerId": 2,
-        "id": 5,
+        "pieceId": 5,
         "puttableIds": []
       },
       {
         "type": 7,
         "playerId": 2,
-        "id": 6,
+        "pieceId": 6,
         "puttableIds": []
       },
       {
         "type": 9,
         "playerId": 2,
-        "id": 7,
+        "pieceId": 7,
         "puttableIds": []
       },
       {
         "type": 11,
         "playerId": 2,
-        "id": 8,
+        "pieceId": 8,
         "puttableIds": []
       }
     ],
@@ -60,55 +60,55 @@
       {
         "type": 0,
         "playerId": 0,
-        "id": 10,
+        "pieceId": 10,
         "puttableIds": []
       },
       {
         "type": 2,
         "playerId": 2,
-        "id": 11,
+        "pieceId": 11,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 12,
+        "pieceId": 12,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 13,
+        "pieceId": 13,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 14,
+        "pieceId": 14,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 15,
+        "pieceId": 15,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 16,
+        "pieceId": 16,
         "puttableIds": []
       },
       {
         "type": 4,
         "playerId": 2,
-        "id": 17,
+        "pieceId": 17,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 18,
+        "pieceId": 18,
         "puttableIds": []
       }
     ],
@@ -116,55 +116,55 @@
       {
         "type": 13,
         "playerId": 2,
-        "id": 20,
+        "pieceId": 20,
         "puttableIds": []
       },
       {
         "type": 13,
         "playerId": 2,
-        "id": 21,
+        "pieceId": 21,
         "puttableIds": []
       },
       {
         "type": 13,
         "playerId": 2,
-        "id": 22,
+        "pieceId": 22,
         "puttableIds": []
       },
       {
         "type": 13,
         "playerId": 2,
-        "id": 23,
+        "pieceId": 23,
         "puttableIds": []
       },
       {
         "type": 13,
         "playerId": 2,
-        "id": 24,
+        "pieceId": 24,
         "puttableIds": []
       },
       {
         "type": 13,
         "playerId": 2,
-        "id": 25,
+        "pieceId": 25,
         "puttableIds": []
       },
       {
         "type": 13,
         "playerId": 2,
-        "id": 26,
+        "pieceId": 26,
         "puttableIds": []
       },
       {
         "type": 13,
         "playerId": 2,
-        "id": 27,
+        "pieceId": 27,
         "puttableIds": []
       },
       {
         "type": 13,
         "playerId": 2,
-        "id": 28,
+        "pieceId": 28,
         "puttableIds": []
       }
     ],
@@ -172,55 +172,55 @@
       {
         "type": 0,
         "playerId": 0,
-        "id": 30,
+        "pieceId": 30,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 31,
+        "pieceId": 31,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 32,
+        "pieceId": 32,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 33,
+        "pieceId": 33,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 34,
+        "pieceId": 34,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 35,
+        "pieceId": 35,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 36,
+        "pieceId": 36,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 37,
+        "pieceId": 37,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 38,
+        "pieceId": 38,
         "puttableIds": []
       }
     ],
@@ -228,55 +228,55 @@
       {
         "type": 0,
         "playerId": 0,
-        "id": 40,
+        "pieceId": 40,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 41,
+        "pieceId": 41,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 42,
+        "pieceId": 42,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 43,
+        "pieceId": 43,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 44,
+        "pieceId": 44,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 45,
+        "pieceId": 45,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 46,
+        "pieceId": 46,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 47,
+        "pieceId": 47,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 48,
+        "pieceId": 48,
         "puttableIds": []
       }
     ],
@@ -284,55 +284,55 @@
       {
         "type": 0,
         "playerId": 0,
-        "id": 50,
+        "pieceId": 50,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 51,
+        "pieceId": 51,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 52,
+        "pieceId": 52,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 53,
+        "pieceId": 53,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 54,
+        "pieceId": 54,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 55,
+        "pieceId": 55,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 56,
+        "pieceId": 56,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 57,
+        "pieceId": 57,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 58,
+        "pieceId": 58,
         "puttableIds": []
       }
     ],
@@ -340,55 +340,55 @@
       {
         "type": 13,
         "playerId": 1,
-        "id": 60,
+        "pieceId": 60,
         "puttableIds": []
       },
       {
         "type": 13,
         "playerId": 1,
-        "id": 61,
+        "pieceId": 61,
         "puttableIds": []
       },
       {
         "type": 13,
         "playerId": 1,
-        "id": 62,
+        "pieceId": 62,
         "puttableIds": []
       },
       {
         "type": 13,
         "playerId": 1,
-        "id": 63,
+        "pieceId": 63,
         "puttableIds": []
       },
       {
         "type": 13,
         "playerId": 1,
-        "id": 64,
+        "pieceId": 64,
         "puttableIds": []
       },
       {
         "type": 13,
         "playerId": 1,
-        "id": 65,
+        "pieceId": 65,
         "puttableIds": []
       },
       {
         "type": 13,
         "playerId": 1,
-        "id": 66,
+        "pieceId": 66,
         "puttableIds": []
       },
       {
         "type": 13,
         "playerId": 1,
-        "id": 67,
+        "pieceId": 67,
         "puttableIds": []
       },
       {
         "type": 13,
         "playerId": 1,
-        "id": 68,
+        "pieceId": 68,
         "puttableIds": []
       }
     ],
@@ -396,55 +396,55 @@
       {
         "type": 0,
         "playerId": 0,
-        "id": 70,
+        "pieceId": 70,
         "puttableIds": []
       },
       {
         "type": 4,
         "playerId": 1,
-        "id": 71,
+        "pieceId": 71,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 72,
+        "pieceId": 72,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 73,
+        "pieceId": 73,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 74,
+        "pieceId": 74,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 75,
+        "pieceId": 75,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 76,
+        "pieceId": 76,
         "puttableIds": []
       },
       {
         "type": 2,
         "playerId": 1,
-        "id": 77,
+        "pieceId": 77,
         "puttableIds": []
       },
       {
         "type": 0,
         "playerId": 0,
-        "id": 78,
+        "pieceId": 78,
         "puttableIds": []
       }
     ],
@@ -452,55 +452,55 @@
       {
         "type": 11,
         "playerId": 1,
-        "id": 80,
+        "pieceId": 80,
         "puttableIds": []
       },
       {
         "type": 9,
         "playerId": 1,
-        "id": 81,
+        "pieceId": 81,
         "puttableIds": []
       },
       {
         "type": 7,
         "playerId": 1,
-        "id": 82,
+        "pieceId": 82,
         "puttableIds": []
       },
       {
         "type": 6,
         "playerId": 1,
-        "id": 83,
+        "pieceId": 83,
         "puttableIds": []
       },
       {
         "type": 1,
         "playerId": 1,
-        "id": 84,
+        "pieceId": 84,
         "puttableIds": []
       },
       {
         "type": 6,
         "playerId": 1,
-        "id": 85,
+        "pieceId": 85,
         "puttableIds": []
       },
       {
         "type": 7,
         "playerId": 1,
-        "id": 86,
+        "pieceId": 86,
         "puttableIds": []
       },
       {
         "type": 9,
         "playerId": 1,
-        "id": 87,
+        "pieceId": 87,
         "puttableIds": []
       },
       {
         "type": 11,
         "playerId": 1,
-        "id": 88,
+        "pieceId": 88,
         "puttableIds": []
       }
     ]
