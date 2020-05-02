@@ -32,6 +32,10 @@ type MoveInfo struct {
 
 // TableMove は駒の移動命令を受け付けるハンドラです
 func TableMove(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "POST" {
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
 	info, err := extractionMoveInfo(r)
 	if err != nil {
 		// TODO: エラー処理を行う
