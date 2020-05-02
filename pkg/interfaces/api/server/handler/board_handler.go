@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"strconv"
 
 	"github.com/MrFuku/shogi-backend/pkg/domain/model/board"
 	"github.com/MrFuku/shogi-backend/pkg/domain/model/piece"
@@ -61,13 +60,6 @@ func move(info MoveInfo, b *board.Board) (err error) {
 
 // extractionMoveInfo はリクエストからMoveInfoを抜き出す関数です
 func extractionMoveInfo(r *http.Request) (info MoveInfo, err error) {
-	length, _ := strconv.Atoi(r.Header.Get("Content-Length"))
-	body := make([]byte, length)
-	length, _ = r.Body.Read(body)
-	info = MoveInfo{}
-	err = json.Unmarshal(body[:length], &info)
-	if err != nil {
-		return
-	}
+	err = json.NewDecoder(r.Body).Decode(&info)
 	return
 }
