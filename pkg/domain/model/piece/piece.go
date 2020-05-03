@@ -64,6 +64,8 @@ func repeat(y, x int) (res [][]int) {
 // getMoveInfo は駒の相対的な移動位置情報を駒タイプ別に返します
 func getMoveInfo(pieceType int, rev bool) (res [][][]int) {
 	switch pieceType {
+	case 1:
+		res = [][][]int{{{-1, -1}}, {{-1, 0}}, {{-1, 1}}, {{0, -1}}, {{0, 1}}, {{1, -1}}, {{1, 0}}, {{1, 1}}}
 	case 2:
 		res = [][][]int{repeat(-1, 0), repeat(0, 1), repeat(1, 0), repeat(0, -1)}
 	case 4:
