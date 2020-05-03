@@ -27,10 +27,10 @@ func Init() (b *Board, err error) {
 }
 
 func (b *Board) setPuttableInfo(m *piece.MovablePoints) {
-	pt := m.PieceType
+	pid := m.PlayerID
 	for _, r := range m.Points {
 		for _, p := range r {
-			if b.Table[p.Y][p.X].PieceType != pt {
+			if b.Table[p.Y][p.X].PlayerID != pid {
 				b.Table[p.Y][p.X].PuttableIds = append(b.Table[p.Y][p.X].PuttableIds, m.PieceID)
 			} else {
 				break
