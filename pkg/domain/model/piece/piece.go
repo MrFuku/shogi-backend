@@ -56,7 +56,8 @@ func (p *Piece) GetMovablePoints() MovablePoints {
 
 // getMoveInfo は駒の相対的な移動位置情報を駒タイプ別に返します
 func getMoveInfo(pieceType int, rev bool) (res [][][]int) {
-	if pieceType == 13 {
+	switch pieceType {
+	case 13:
 		res = [][][]int{{{-1, 0}}}
 	}
 
