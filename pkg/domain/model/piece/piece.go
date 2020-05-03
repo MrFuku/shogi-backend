@@ -27,14 +27,14 @@ func (p *Point) inRange() bool {
 
 // MovablePoints はある駒が障害物がない時に移動できる位置を示す構造体です
 type MovablePoints struct {
-	PieceID   int
-	PieceType int
-	Points    [][]Point
+	PieceID  int
+	PlayerID int
+	Points   [][]Point
 }
 
 // GetMovablePoints はMovablePointsを生成し返します
 func (p *Piece) GetMovablePoints() MovablePoints {
-	mps := MovablePoints{PieceID: p.PieceID, PieceType: p.PieceType}
+	mps := MovablePoints{PieceID: p.PieceID, PlayerID: p.PlayerID}
 	info := getMoveInfo(p.PieceType, false)
 
 	py := p.PieceID / 10
