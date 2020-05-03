@@ -76,6 +76,8 @@ func getMoveInfo(pieceType int, rev bool) (res [][][]int) {
 		res = [][][]int{{{-1, -1}}, {{-1, 0}}, {{-1, 1}}, {{1, -1}}, {{1, 1}}}
 	case 9:
 		res = [][][]int{{{-2, -1}}, {{-2, 1}}}
+	case 11:
+		res = [][][]int{repeat(-1, 0)}
 	case 13:
 		res = [][][]int{{{-1, 0}}}
 	}
