@@ -54,9 +54,31 @@ func (p *Piece) GetMovablePoints() MovablePoints {
 	return mps
 }
 
+func repeat(y, x int) (res [][]int) {
+	for i := 1; i < 9; i++ {
+		res = append(res, []int{y * i, x * i})
+	}
+	return
+}
+
 // getMoveInfo は駒の相対的な移動位置情報を駒タイプ別に返します
 func getMoveInfo(pieceType int, rev bool) (res [][][]int) {
-	if pieceType == 13 {
+	switch pieceType {
+	case 1:
+		res = [][][]int{{{-1, -1}}, {{-1, 0}}, {{-1, 1}}, {{0, -1}}, {{0, 1}}, {{1, -1}}, {{1, 0}}, {{1, 1}}}
+	case 2:
+		res = [][][]int{repeat(-1, 0), repeat(0, 1), repeat(1, 0), repeat(0, -1)}
+	case 4:
+		res = [][][]int{repeat(-1, -1), repeat(-1, 1), repeat(1, -1), repeat(1, 1)}
+	case 6:
+		res = [][][]int{{{-1, -1}}, {{-1, 0}}, {{-1, 1}}, {{0, -1}}, {{0, 1}}, {{1, 0}}}
+	case 7:
+		res = [][][]int{{{-1, -1}}, {{-1, 0}}, {{-1, 1}}, {{1, -1}}, {{1, 1}}}
+	case 9:
+		res = [][][]int{{{-2, -1}}, {{-2, 1}}}
+	case 11:
+		res = [][][]int{repeat(-1, 0)}
+	case 13:
 		res = [][][]int{{{-1, 0}}}
 	}
 
