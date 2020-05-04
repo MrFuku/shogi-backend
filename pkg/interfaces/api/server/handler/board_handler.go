@@ -57,7 +57,7 @@ func move(info MoveInfo, b *board.Board) (err error) {
 	y := info.PieceID / 10
 	x := info.PieceID % 10
 	pi := b.Table[y][x]
-	b.Table[y][x] = piece.Piece{PieceID: 0, PieceType: 0, PlayerID: info.PieceID, PuttableIds: []int{}}
+	b.Table[y][x] = piece.Piece{PieceID: info.PieceID, PieceType: 0, PlayerID: 0, PuttableIds: []int{}}
 	pi.PieceID = info.Y*10 + info.X
 	b.Table[info.Y][info.X] = pi
 	return

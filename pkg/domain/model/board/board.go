@@ -9,7 +9,8 @@ import (
 
 // Board は将棋の駒を表す構造体です
 type Board struct {
-	Table [][]piece.Piece `json:"table"`
+	Table        [][]piece.Piece `json:"table"`
+	HoldingTable [][]piece.Piece `json:"holdingTable"`
 }
 
 // Init は初期状態の将棋盤を生成して返します
