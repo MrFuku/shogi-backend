@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 
 	"github.com/MrFuku/shogi-backend/pkg/domain/model/piece"
+	"github.com/MrFuku/shogi-backend/pkg/domain/value_object/pieceid"
 )
 
 // Board は将棋の駒を表す構造体です
@@ -61,7 +62,7 @@ func (b *Board) setPuttableInfoByHolding(pi *piece.Piece) {
 func (b *Board) UpdatePuttableIds(playerID int) {
 	for _, row := range b.Table {
 		for i := range row {
-			row[i].PuttableIds = []int{}
+			row[i].PuttableIds = []pieceid.PieceID{}
 		}
 	}
 	for _, row := range b.Table {

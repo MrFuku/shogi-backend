@@ -7,6 +7,7 @@ import (
 
 	"github.com/MrFuku/shogi-backend/pkg/domain/model/board"
 	"github.com/MrFuku/shogi-backend/pkg/domain/model/piece"
+	"github.com/MrFuku/shogi-backend/pkg/domain/value_object/pieceid"
 )
 
 // InitBoard は挨拶を返すハンドラ関数です
@@ -27,7 +28,7 @@ func InitBoard(w http.ResponseWriter, r *http.Request) {
 type MoveInfo struct {
 	board.Board
 	piece.Point
-	PieceID int `json:"pieceId"`
+	pieceid.PieceID `json:"pieceId"`
 }
 
 // TableMove は駒の移動命令を受け付けるハンドラです
@@ -56,13 +57,13 @@ func TableMove(w http.ResponseWriter, r *http.Request) {
 func move(info MoveInfo, b *board.Board) (err error) {
 	var pi piece.Piece
 	if info.PieceID < 100 {
-		y := info.PieceID / 10
-		x := info.PieceID % 10
+		y := info.GetY()
+		x := info.GetX()
 		pi = b.Table[y][x]
-		b.Table[y][x] = piece.Piece{PieceID: info.PieceID, PieceType: 0, PlayerID: 0, PuttableIds: []int{}}
+		b.Table[y][x] = piece.Piece{PieceID: info.PieceID, PieceType: 0, PlayerID: 0, PuttableIds: []pieceid.PieceID{}}
 		if b.Table[info.Y][info.X].PlayerID > 0 {
 			id := len(b.HoldingTable[pi.PlayerID]) + pi.PlayerID*100
-			p := piece.Piece{PieceID: id, PieceType: b.Table[info.Y][info.X].PieceType, PlayerID: pi.PlayerID, PuttableIds: []int{}}
+			p := piece.Piece{PieceID: pieceid.PieceID(id), PieceType: b.Table[info.Y][info.X].PieceType, PlayerID: pi.PlayerID, PuttableIds: []pieceid.PieceID{}}
 			b.HoldingTable[pi.PlayerID] = append(b.HoldingTable[pi.PlayerID], p)
 		}
 	} else {
@@ -71,7 +72,7 @@ func move(info MoveInfo, b *board.Board) (err error) {
 		pi = b.HoldingTable[pid][idx]
 		b.HoldingTable[pid] = append(b.HoldingTable[pid][:idx], b.HoldingTable[pid][idx+1:]...)
 	}
-	pi.PieceID = info.Y*10 + info.X
+	pi.PieceID = pieceid.PieceID(info.Y*10 + info.X)
 	b.Table[info.Y][info.X] = pi
 	return
 }
