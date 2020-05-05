@@ -11,6 +11,7 @@ import (
 type Board struct {
 	Table        [][]piece.Piece `json:"table"`
 	HoldingTable [][]piece.Piece `json:"holdingTable"`
+	pawnColumns  map[int]bool
 }
 
 // Init は初期状態の将棋盤を生成して返します
@@ -40,6 +41,19 @@ func (b *Board) setPuttableInfo(m *piece.MovablePoints) {
 	}
 }
 
+func (b *Board) setPuttableInfoByHolding(pi *piece.Piece) {
+	for _, row := range b.Table {
+		for i := range row {
+			if row[i].PlayerID > 0 {
+				continue
+			}
+			if pi.PieceType != 13 || !b.pawnColumns[i] {
+				row[i].PuttableIds = append(row[i].PuttableIds, pi.PieceID)
+			}
+		}
+	}
+}
+
 // UpdatePuttableIds はputtbleIdsを更新します
 func (b *Board) UpdatePuttableIds(playerID int) {
 	for _, row := range b.Table {
@@ -52,6 +66,28 @@ func (b *Board) UpdatePuttableIds(playerID int) {
 			if row[i].PlayerID == playerID {
 				m := row[i].GetMovablePoints()
 				b.setPuttableInfo(&m)
+			}
+		}
+	}
+	b.setPawnColumns()
+	for id, row := range b.HoldingTable {
+		if id != playerID {
+			continue
+		}
+		for _, p := range row {
+			b.setPuttableInfoByHolding(&p)
+		}
+	}
+}
+
+func (b *Board) setPawnColumns() {
+	b.pawnColumns = map[int]bool{}
+	for _, row := range b.Table {
+		for x, p := range row {
+			if b.pawnColumns[x] {
+				continue
+			} else if p.PieceType == 13 {
+				b.pawnColumns[x] = true
 			}
 		}
 	}
