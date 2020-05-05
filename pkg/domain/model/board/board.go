@@ -34,6 +34,9 @@ func (b *Board) setPuttableInfo(m *piece.MovablePoints) {
 		for _, p := range r {
 			if b.Table[p.Y][p.X].PlayerID != pid {
 				b.Table[p.Y][p.X].PuttableIds = append(b.Table[p.Y][p.X].PuttableIds, m.PieceID)
+				if b.Table[p.Y][p.X].PlayerID > 0 {
+					break
+				}
 			} else {
 				break
 			}
