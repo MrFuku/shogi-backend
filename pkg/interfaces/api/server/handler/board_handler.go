@@ -54,16 +54,24 @@ func TableMove(w http.ResponseWriter, r *http.Request) {
 }
 
 func move(info MoveInfo, b *board.Board) (err error) {
-	y := info.PieceID / 10
-	x := info.PieceID % 10
-	pi := b.Table[y][x]
-	b.Table[y][x] = piece.Piece{PieceID: info.PieceID, PieceType: 0, PlayerID: 0, PuttableIds: []int{}}
-	pi.PieceID = info.Y*10 + info.X
-	if b.Table[info.Y][info.X].PlayerID > 0 {
-		id := len(b.HoldingTable[pi.PlayerID]) + pi.PlayerID * 100
-		p := piece.Piece{PieceID: id, PieceType: b.Table[info.Y][info.X].PieceType, PlayerID: pi.PlayerID, PuttableIds: []int{}}
-		b.HoldingTable[pi.PlayerID] = append(b.HoldingTable[pi.PlayerID], p)
+	var pi piece.Piece
+	if info.PieceID < 100 {
+		y := info.PieceID / 10
+		x := info.PieceID % 10
+		pi = b.Table[y][x]
+		b.Table[y][x] = piece.Piece{PieceID: info.PieceID, PieceType: 0, PlayerID: 0, PuttableIds: []int{}}
+		if b.Table[info.Y][info.X].PlayerID > 0 {
+			id := len(b.HoldingTable[pi.PlayerID]) + pi.PlayerID*100
+			p := piece.Piece{PieceID: id, PieceType: b.Table[info.Y][info.X].PieceType, PlayerID: pi.PlayerID, PuttableIds: []int{}}
+			b.HoldingTable[pi.PlayerID] = append(b.HoldingTable[pi.PlayerID], p)
+		}
+	} else {
+		pid := info.PieceID / 100
+		idx := info.PieceID % 100
+		pi = b.HoldingTable[pid][idx]
+		b.HoldingTable[pid] = append(b.HoldingTable[pid][:idx], b.HoldingTable[pid][idx+1:]...)
 	}
+	pi.PieceID = info.Y*10 + info.X
 	b.Table[info.Y][info.X] = pi
 	return
 }
