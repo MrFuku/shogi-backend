@@ -128,9 +128,7 @@ func (b *Board) setPawnColumns() {
 	b.pawnColumns = map[int]bool{}
 	for _, row := range b.Table {
 		for x, p := range row {
-			if b.pawnColumns[x] {
-				continue
-			} else if p.IsPawn() {
+			if !b.pawnColumns[x] && p.IsPawn() {
 				b.pawnColumns[x] = true
 			}
 		}
