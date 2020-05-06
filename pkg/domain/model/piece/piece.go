@@ -42,7 +42,7 @@ func (p *Piece) Exist() bool {
 // GetMovablePoints はMovablePointsを生成し返します
 func (p *Piece) GetMovablePoints() MovablePoints {
 	mps := MovablePoints{PieceID: p.PieceID, PlayerID: p.PlayerID}
-	info := getMoveInfo(p.PieceType, false)
+	info := getMoveInfo(p.PieceType, p.isEnemy())
 
 	py := p.GetY()
 	px := p.GetX()
@@ -59,6 +59,10 @@ func (p *Piece) GetMovablePoints() MovablePoints {
 		mps.Points = append(mps.Points, ps)
 	}
 	return mps
+}
+
+func (p *Piece) isEnemy() bool {
+	return p.PlayerID == 2
 }
 
 func repeat(y, x int) (res [][]int) {
