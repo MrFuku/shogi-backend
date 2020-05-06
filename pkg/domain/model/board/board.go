@@ -35,6 +35,11 @@ func (m *MoveInfo) prevPiece() (p piece.Piece) {
 	return
 }
 
+func (m *MoveInfo) nextPiece() (p piece.Piece) {
+	p = m.Table[m.Y][m.X]
+	return
+}
+
 // Init は初期状態の将棋盤を生成して返します
 func Init() (b *Board, err error) {
 	f, err := ioutil.ReadFile("pkg/domain/model/board/init.json")
@@ -50,23 +55,24 @@ func Init() (b *Board, err error) {
 }
 
 // Move は将棋盤上の駒を移動させます
-func (b *Board) Move(info MoveInfo) (err error) {
-	pi := info.prevPiece()
-	if info.IsHolding() {
-		pid := info.PieceID / 100
-		idx := info.PieceID % 100
-		b.HoldingTable[pid] = append(b.HoldingTable[pid][:idx], b.HoldingTable[pid][idx+1:]...)
+func (m *MoveInfo) Move() {
+	preP := m.prevPiece()
+	nxtP := m.nextPiece()
+	if preP.IsHolding() {
+		pid := preP.PieceID / 100
+		idx := preP.PieceID % 100
+		m.HoldingTable[pid] = append(m.HoldingTable[pid][:idx], m.HoldingTable[pid][idx+1:]...)
 	} else {
-		b.setEmptyPiece(info.GetY(), info.GetX())
-		if b.Table[info.Y][info.X].Exist() {
-			id := len(b.HoldingTable[pi.PlayerID]) + pi.PlayerID*100
-			p := piece.Piece{PieceID: pieceid.PieceID(id), PieceType: b.Table[info.Y][info.X].PieceType, PlayerID: pi.PlayerID, PuttableIds: []pieceid.PieceID{}}
-			b.HoldingTable[pi.PlayerID] = append(b.HoldingTable[pi.PlayerID], p)
+		m.SetEmptyPiece(preP.GetY(), preP.GetX())
+		if nxtP.Exist() {
+			idx := 2 - preP.PlayerID
+			id := len(m.HoldingTable[idx]) + preP.PlayerID*100
+			p := piece.NewPiece(id, nxtP.PieceType, preP.PlayerID)
+			m.HoldingTable[idx] = append(m.HoldingTable[idx], p)
 		}
 	}
-	pi.PieceID = pieceid.PieceID(info.Y*10 + info.X)
-	b.Table[info.Y][info.X] = pi
-	return
+	preP.PieceID = nxtP.PieceID
+	m.Table[nxtP.GetY()][nxtP.GetX()] = preP
 }
 
 func (b *Board) setPuttableInfo(m *piece.MovablePoints) {
@@ -135,6 +141,6 @@ func (b *Board) setPawnColumns() {
 	}
 }
 
-func (b *Board) setEmptyPiece(y, x int) {
+func (b *Board) SetEmptyPiece(y, x int) {
 	b.Table[y][x] = piece.Piece{PieceID: pieceid.PieceID(y*10 + x), PieceType: 0, PlayerID: 0, PuttableIds: []pieceid.PieceID{}}
 }
