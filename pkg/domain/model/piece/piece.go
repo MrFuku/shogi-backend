@@ -34,6 +34,16 @@ type MovablePoints struct {
 	Points   [][]Point
 }
 
+// NewPiece はPieceを生成して返します
+func NewPiece(id, pieceType, playerID int) Piece {
+	return Piece{PieceID: pieceid.PieceID(id), PieceType: pieceType, PlayerID: playerID, PuttableIds: []pieceid.PieceID{}}
+}
+
+// SetPieceID はPieceIDをsetします
+func (p *Piece) SetPieceID(id int) {
+	p.PieceID = pieceid.PieceID(id)
+}
+
 // Exist は駒が存在する時にtrueを返します
 func (p *Piece) Exist() bool {
 	return p.PieceType != 0

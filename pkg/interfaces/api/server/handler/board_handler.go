@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/MrFuku/shogi-backend/pkg/application/usecase"
 	"github.com/MrFuku/shogi-backend/pkg/domain/model/board"
 )
 
@@ -33,12 +34,10 @@ func TableMove(w http.ResponseWriter, r *http.Request) {
 		// TODO: エラー処理を行う
 	}
 	// TODO: リクエストからBoard情報を取得しているが、現状では不正可能なのでDBから取得するようにする
-	board := info.Board
-	if err := board.Move(info); err != nil {
-		// TODO: エラー処理を行う
-	}
-	board.UpdatePuttableIds(1)
-	h, err := json.Marshal(&board)
+	buc := usecase.NewBoardUseCase()
+	buc.MovePiece(&info)
+
+	h, err := json.Marshal(&info.Board)
 	if err != nil {
 		// TODO: エラー処理を行う
 	}
