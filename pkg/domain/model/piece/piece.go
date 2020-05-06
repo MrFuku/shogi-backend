@@ -99,3 +99,8 @@ func getMoveInfo(pieceType int, rev bool) (res [][][]int) {
 	}
 	return
 }
+
+// IsPawn は駒タイプが歩兵の時にtrueを返します
+func (p *Piece) IsPawn() bool {
+	return p.PieceType == 13
+}

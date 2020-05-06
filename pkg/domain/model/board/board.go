@@ -82,7 +82,7 @@ func (b *Board) setPuttableInfoByHolding(pi *piece.Piece) {
 			if row[i].Exist() {
 				continue
 			}
-			if pi.PieceType != 13 || !b.pawnColumns[i] {
+			if !pi.IsPawn() || !b.pawnColumns[i] {
 				row[i].PuttableIds = append(row[i].PuttableIds, pi.PieceID)
 			}
 		}
@@ -121,7 +121,7 @@ func (b *Board) setPawnColumns() {
 		for x, p := range row {
 			if b.pawnColumns[x] {
 				continue
-			} else if p.PieceType == 13 {
+			} else if p.IsPawn() {
 				b.pawnColumns[x] = true
 			}
 		}
