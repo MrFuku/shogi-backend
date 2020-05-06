@@ -39,7 +39,12 @@ func Init() (b *Board, err error) {
 // Move は将棋盤上の駒を移動させます
 func (b *Board) Move(info MoveInfo) (err error) {
 	var pi piece.Piece
-	if info.PieceID < 100 {
+	if info.IsHolding() {
+		pid := info.PieceID / 100
+		idx := info.PieceID % 100
+		pi = b.HoldingTable[pid][idx]
+		b.HoldingTable[pid] = append(b.HoldingTable[pid][:idx], b.HoldingTable[pid][idx+1:]...)
+	} else {
 		y := info.GetY()
 		x := info.GetX()
 		pi = b.Table[y][x]
@@ -49,11 +54,6 @@ func (b *Board) Move(info MoveInfo) (err error) {
 			p := piece.Piece{PieceID: pieceid.PieceID(id), PieceType: b.Table[info.Y][info.X].PieceType, PlayerID: pi.PlayerID, PuttableIds: []pieceid.PieceID{}}
 			b.HoldingTable[pi.PlayerID] = append(b.HoldingTable[pi.PlayerID], p)
 		}
-	} else {
-		pid := info.PieceID / 100
-		idx := info.PieceID % 100
-		pi = b.HoldingTable[pid][idx]
-		b.HoldingTable[pid] = append(b.HoldingTable[pid][:idx], b.HoldingTable[pid][idx+1:]...)
 	}
 	pi.PieceID = pieceid.PieceID(info.Y*10 + info.X)
 	b.Table[info.Y][info.X] = pi
