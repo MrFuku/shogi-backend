@@ -19,7 +19,7 @@ type Board struct {
 type MoveInfo struct {
 	Board
 	piece.Point
-	pieceid.PieceID `json:"pieceId"`
+	pieceid.PieceID
 }
 
 // Init は初期状態の将棋盤を生成して返します
