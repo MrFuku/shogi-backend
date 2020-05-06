@@ -61,7 +61,7 @@ func move(info MoveInfo, b *board.Board) (err error) {
 		x := info.GetX()
 		pi = b.Table[y][x]
 		b.Table[y][x] = piece.Piece{PieceID: info.PieceID, PieceType: 0, PlayerID: 0, PuttableIds: []pieceid.PieceID{}}
-		if b.Table[info.Y][info.X].PlayerID > 0 {
+		if b.Table[info.Y][info.X].Exist() {
 			id := len(b.HoldingTable[pi.PlayerID]) + pi.PlayerID*100
 			p := piece.Piece{PieceID: pieceid.PieceID(id), PieceType: b.Table[info.Y][info.X].PieceType, PlayerID: pi.PlayerID, PuttableIds: []pieceid.PieceID{}}
 			b.HoldingTable[pi.PlayerID] = append(b.HoldingTable[pi.PlayerID], p)

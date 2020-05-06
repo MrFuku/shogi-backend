@@ -34,6 +34,11 @@ type MovablePoints struct {
 	Points   [][]Point
 }
 
+// Exist は駒が存在する時にtrueを返します
+func (p *Piece) Exist() bool {
+	return p.PieceType != 0
+}
+
 // GetMovablePoints はMovablePointsを生成し返します
 func (p *Piece) GetMovablePoints() MovablePoints {
 	mps := MovablePoints{PieceID: p.PieceID, PlayerID: p.PlayerID}

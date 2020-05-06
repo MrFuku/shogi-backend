@@ -35,7 +35,7 @@ func (b *Board) setPuttableInfo(m *piece.MovablePoints) {
 		for _, p := range r {
 			if b.Table[p.Y][p.X].PlayerID != pid {
 				b.Table[p.Y][p.X].PuttableIds = append(b.Table[p.Y][p.X].PuttableIds, m.PieceID)
-				if b.Table[p.Y][p.X].PlayerID > 0 {
+				if b.Table[p.Y][p.X].Exist() {
 					break
 				}
 			} else {
@@ -48,7 +48,7 @@ func (b *Board) setPuttableInfo(m *piece.MovablePoints) {
 func (b *Board) setPuttableInfoByHolding(pi *piece.Piece) {
 	for _, row := range b.Table {
 		for i := range row {
-			if row[i].PlayerID > 0 {
+			if row[i].Exist() {
 				continue
 			}
 			if pi.PieceType != 13 || !b.pawnColumns[i] {
