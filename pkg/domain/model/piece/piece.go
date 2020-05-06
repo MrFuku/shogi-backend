@@ -1,11 +1,13 @@
 package piece
 
+import "github.com/MrFuku/shogi-backend/pkg/domain/value_object/pieceid"
+
 // Piece は将棋の駒を表す構造体です
 type Piece struct {
-	PieceID     int   `json:"pieceId"`
-	PieceType   int   `json:"type"`
-	PlayerID    int   `json:"playerId"`
-	PuttableIds []int `json:"puttableIds"`
+	pieceid.PieceID `json:"pieceId"`
+	PieceType       int               `json:"type"`
+	PlayerID        int               `json:"playerId"`
+	PuttableIds     []pieceid.PieceID `json:"puttableIds"`
 }
 
 // Point は将棋盤上の位置を示す構造体です
@@ -27,9 +29,14 @@ func (p *Point) inRange() bool {
 
 // MovablePoints はある駒が障害物がない時に移動できる位置を示す構造体です
 type MovablePoints struct {
-	PieceID  int
+	pieceid.PieceID
 	PlayerID int
 	Points   [][]Point
+}
+
+// Exist は駒が存在する時にtrueを返します
+func (p *Piece) Exist() bool {
+	return p.PieceType != 0
 }
 
 // GetMovablePoints はMovablePointsを生成し返します
@@ -37,8 +44,8 @@ func (p *Piece) GetMovablePoints() MovablePoints {
 	mps := MovablePoints{PieceID: p.PieceID, PlayerID: p.PlayerID}
 	info := getMoveInfo(p.PieceType, false)
 
-	py := p.PieceID / 10
-	px := p.PieceID % 10
+	py := p.GetY()
+	px := p.GetX()
 	for _, row := range info {
 		var ps []Point
 		for _, r := range row {
@@ -91,4 +98,9 @@ func getMoveInfo(pieceType int, rev bool) (res [][][]int) {
 		}
 	}
 	return
+}
+
+// IsPawn は駒タイプが歩兵の時にtrueを返します
+func (p *Piece) IsPawn() bool {
+	return p.PieceType == 13
 }
