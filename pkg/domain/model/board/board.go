@@ -35,6 +35,11 @@ func (m *MoveInfo) prevPiece() (p piece.Piece) {
 	return
 }
 
+func (m *MoveInfo) nextPiece() (p piece.Piece) {
+	p = m.Table[m.Y][m.X]
+	return
+}
+
 // Init は初期状態の将棋盤を生成して返します
 func Init() (b *Board, err error) {
 	f, err := ioutil.ReadFile("pkg/domain/model/board/init.json")
