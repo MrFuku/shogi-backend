@@ -22,6 +22,19 @@ type MoveInfo struct {
 	pieceid.PieceID
 }
 
+func (m *MoveInfo) prevPiece() (p piece.Piece) {
+	if m.IsHolding() {
+		pid := m.PieceID / 100
+		idx := m.PieceID % 100
+		p = m.Board.HoldingTable[pid][idx]
+	} else {
+		y := m.GetY()
+		x := m.GetX()
+		p = m.Table[y][x]
+	}
+	return
+}
+
 // Init は初期状態の将棋盤を生成して返します
 func Init() (b *Board, err error) {
 	f, err := ioutil.ReadFile("pkg/domain/model/board/init.json")
@@ -38,17 +51,13 @@ func Init() (b *Board, err error) {
 
 // Move は将棋盤上の駒を移動させます
 func (b *Board) Move(info MoveInfo) (err error) {
-	var pi piece.Piece
+	pi := info.prevPiece()
 	if info.IsHolding() {
 		pid := info.PieceID / 100
 		idx := info.PieceID % 100
-		pi = b.HoldingTable[pid][idx]
 		b.HoldingTable[pid] = append(b.HoldingTable[pid][:idx], b.HoldingTable[pid][idx+1:]...)
 	} else {
-		y := info.GetY()
-		x := info.GetX()
-		pi = b.Table[y][x]
-		b.Table[y][x] = piece.Piece{PieceID: info.PieceID, PieceType: 0, PlayerID: 0, PuttableIds: []pieceid.PieceID{}}
+		b.setEmptyPiece(info.GetY(), info.GetX())
 		if b.Table[info.Y][info.X].Exist() {
 			id := len(b.HoldingTable[pi.PlayerID]) + pi.PlayerID*100
 			p := piece.Piece{PieceID: pieceid.PieceID(id), PieceType: b.Table[info.Y][info.X].PieceType, PlayerID: pi.PlayerID, PuttableIds: []pieceid.PieceID{}}
@@ -119,11 +128,13 @@ func (b *Board) setPawnColumns() {
 	b.pawnColumns = map[int]bool{}
 	for _, row := range b.Table {
 		for x, p := range row {
-			if b.pawnColumns[x] {
-				continue
-			} else if p.IsPawn() {
+			if !b.pawnColumns[x] && p.IsPawn() {
 				b.pawnColumns[x] = true
 			}
 		}
 	}
+}
+
+func (b *Board) setEmptyPiece(y, x int) {
+	b.Table[y][x] = piece.Piece{PieceID: pieceid.PieceID(y*10 + x), PieceType: 0, PlayerID: 0, PuttableIds: []pieceid.PieceID{}}
 }
