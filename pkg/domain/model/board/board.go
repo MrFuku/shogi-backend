@@ -57,8 +57,7 @@ func (b *Board) Move(info MoveInfo) (err error) {
 		idx := info.PieceID % 100
 		b.HoldingTable[pid] = append(b.HoldingTable[pid][:idx], b.HoldingTable[pid][idx+1:]...)
 	} else {
-		y := info.GetY()
-		b.Table[y][x] = piece.Piece{PieceID: info.PieceID, PieceType: 0, PlayerID: 0, PuttableIds: []pieceid.PieceID{}}
+		b.setEmptyPiece(info.GetY(), info.GetX())
 		if b.Table[info.Y][info.X].Exist() {
 			id := len(b.HoldingTable[pi.PlayerID]) + pi.PlayerID*100
 			p := piece.Piece{PieceID: pieceid.PieceID(id), PieceType: b.Table[info.Y][info.X].PieceType, PlayerID: pi.PlayerID, PuttableIds: []pieceid.PieceID{}}
@@ -136,4 +135,8 @@ func (b *Board) setPawnColumns() {
 			}
 		}
 	}
+}
+
+func (b *Board) setEmptyPiece(y, x int) {
+	b.Table[y][x] = piece.Piece{PieceID: pieceid.PieceID(y*10 + x), PieceType: 0, PlayerID: 0, PuttableIds: []pieceid.PieceID{}}
 }
