@@ -15,6 +15,13 @@ type Board struct {
 	pawnColumns  map[int]bool
 }
 
+// MoveInfo は移動リクエスト情報を表す構造体です
+type MoveInfo struct {
+	Board
+	piece.Point
+	pieceid.PieceID `json:"pieceId"`
+}
+
 // Init は初期状態の将棋盤を生成して返します
 func Init() (b *Board, err error) {
 	f, err := ioutil.ReadFile("pkg/domain/model/board/init.json")
@@ -26,6 +33,30 @@ func Init() (b *Board, err error) {
 		return
 	}
 	b.UpdatePuttableIds(1)
+	return
+}
+
+// Move は将棋盤上の駒を移動させます
+func (b *Board) Move(info MoveInfo) (err error) {
+	var pi piece.Piece
+	if info.PieceID < 100 {
+		y := info.GetY()
+		x := info.GetX()
+		pi = b.Table[y][x]
+		b.Table[y][x] = piece.Piece{PieceID: info.PieceID, PieceType: 0, PlayerID: 0, PuttableIds: []pieceid.PieceID{}}
+		if b.Table[info.Y][info.X].Exist() {
+			id := len(b.HoldingTable[pi.PlayerID]) + pi.PlayerID*100
+			p := piece.Piece{PieceID: pieceid.PieceID(id), PieceType: b.Table[info.Y][info.X].PieceType, PlayerID: pi.PlayerID, PuttableIds: []pieceid.PieceID{}}
+			b.HoldingTable[pi.PlayerID] = append(b.HoldingTable[pi.PlayerID], p)
+		}
+	} else {
+		pid := info.PieceID / 100
+		idx := info.PieceID % 100
+		pi = b.HoldingTable[pid][idx]
+		b.HoldingTable[pid] = append(b.HoldingTable[pid][:idx], b.HoldingTable[pid][idx+1:]...)
+	}
+	pi.PieceID = pieceid.PieceID(info.Y*10 + info.X)
+	b.Table[info.Y][info.X] = pi
 	return
 }
 
