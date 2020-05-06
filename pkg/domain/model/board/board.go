@@ -22,6 +22,19 @@ type MoveInfo struct {
 	pieceid.PieceID
 }
 
+func (m *MoveInfo) prevPiece() (p piece.Piece) {
+	if m.IsHolding() {
+		pid := m.PieceID / 100
+		idx := m.PieceID % 100
+		p = m.Board.HoldingTable[pid][idx]
+	} else {
+		y := m.GetY()
+		x := m.GetX()
+		p = m.Table[y][x]
+	}
+	return
+}
+
 // Init は初期状態の将棋盤を生成して返します
 func Init() (b *Board, err error) {
 	f, err := ioutil.ReadFile("pkg/domain/model/board/init.json")
@@ -38,16 +51,13 @@ func Init() (b *Board, err error) {
 
 // Move は将棋盤上の駒を移動させます
 func (b *Board) Move(info MoveInfo) (err error) {
-	var pi piece.Piece
+	pi := info.prevPiece()
 	if info.IsHolding() {
 		pid := info.PieceID / 100
 		idx := info.PieceID % 100
-		pi = b.HoldingTable[pid][idx]
 		b.HoldingTable[pid] = append(b.HoldingTable[pid][:idx], b.HoldingTable[pid][idx+1:]...)
 	} else {
 		y := info.GetY()
-		x := info.GetX()
-		pi = b.Table[y][x]
 		b.Table[y][x] = piece.Piece{PieceID: info.PieceID, PieceType: 0, PlayerID: 0, PuttableIds: []pieceid.PieceID{}}
 		if b.Table[info.Y][info.X].Exist() {
 			id := len(b.HoldingTable[pi.PlayerID]) + pi.PlayerID*100
