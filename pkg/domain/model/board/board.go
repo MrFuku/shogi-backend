@@ -145,3 +145,8 @@ func (b *Board) setPawnColumns() {
 func (b *Board) SetEmptyPiece(y, x int) {
 	b.Table[y][x] = piece.Piece{PieceID: pieceid.PieceID(y*10 + x), PieceType: 0, PlayerID: 0, PuttableIds: []pieceid.PieceID{}}
 }
+
+// CahgeTurn はプレイヤーのターンを切り替えます
+func (b *Board) CahgeTurn() {
+	b.TurnPlayerID = 3 - b.TurnPlayerID
+}
