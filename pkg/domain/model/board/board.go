@@ -12,6 +12,7 @@ import (
 type Board struct {
 	Table        [][]piece.Piece `json:"table"`
 	HoldingTable [][]piece.Piece `json:"holdingTable"`
+	TurnPlayerID int             `json:"turnPlayerId"`
 	pawnColumns  map[int]bool
 }
 
@@ -26,7 +27,8 @@ func (m *MoveInfo) prevPiece() (p piece.Piece) {
 	if m.IsHolding() {
 		pid := m.PieceID / 100
 		idx := m.PieceID % 100
-		p = m.Board.HoldingTable[pid][idx]
+		pidx := 2 - pid
+		p = m.Board.HoldingTable[pidx][idx]
 	} else {
 		y := m.GetY()
 		x := m.GetX()
@@ -50,7 +52,7 @@ func Init() (b *Board, err error) {
 	if err = json.Unmarshal(f, b); err != nil {
 		return
 	}
-	b.UpdatePuttableIds(1)
+	b.UpdatePuttableIds()
 	return
 }
 
@@ -61,7 +63,8 @@ func (m *MoveInfo) Move() {
 	if preP.IsHolding() {
 		pid := preP.PieceID / 100
 		idx := preP.PieceID % 100
-		m.HoldingTable[pid] = append(m.HoldingTable[pid][:idx], m.HoldingTable[pid][idx+1:]...)
+		pidx := 2 - pid
+		m.HoldingTable[pidx] = append(m.HoldingTable[pidx][:idx], m.HoldingTable[pidx][idx+1:]...)
 	} else {
 		m.SetEmptyPiece(preP.GetY(), preP.GetX())
 		if nxtP.Exist() {
@@ -105,7 +108,7 @@ func (b *Board) setPuttableInfoByHolding(pi *piece.Piece) {
 }
 
 // UpdatePuttableIds はputtbleIdsを更新します
-func (b *Board) UpdatePuttableIds(playerID int) {
+func (b *Board) UpdatePuttableIds() {
 	for _, row := range b.Table {
 		for i := range row {
 			row[i].PuttableIds = []pieceid.PieceID{}
@@ -113,20 +116,15 @@ func (b *Board) UpdatePuttableIds(playerID int) {
 	}
 	for _, row := range b.Table {
 		for i := range row {
-			if row[i].PlayerID == playerID {
+			if row[i].PlayerID == b.TurnPlayerID {
 				m := row[i].GetMovablePoints()
 				b.setPuttableInfo(&m)
 			}
 		}
 	}
 	b.setPawnColumns()
-	for id, row := range b.HoldingTable {
-		if id != playerID {
-			continue
-		}
-		for _, p := range row {
-			b.setPuttableInfoByHolding(&p)
-		}
+	for _, p := range b.getHoldingTable(b.TurnPlayerID) {
+		b.setPuttableInfoByHolding(&p)
 	}
 }
 
@@ -141,6 +139,20 @@ func (b *Board) setPawnColumns() {
 	}
 }
 
+// SetEmptyPiece は空の駒をセットします
 func (b *Board) SetEmptyPiece(y, x int) {
 	b.Table[y][x] = piece.Piece{PieceID: pieceid.PieceID(y*10 + x), PieceType: 0, PlayerID: 0, PuttableIds: []pieceid.PieceID{}}
+}
+
+// CahgeTurn はプレイヤーのターンを切り替えます
+func (b *Board) CahgeTurn() {
+	b.TurnPlayerID = 3 - b.TurnPlayerID
+}
+
+func (b *Board) getHoldingTable(playeyID int) []piece.Piece {
+	idx := 1
+	if playeyID == 2 {
+		idx = 0
+	}
+	return b.HoldingTable[idx]
 }

@@ -22,5 +22,6 @@ func NewBoardUseCase() BoardUseCase {
 // MovePiece は駒の移動を行います
 func (buc *boardUseCase) MovePiece(m *board.MoveInfo) {
 	m.Move()
-	m.UpdatePuttableIds(1)
+	m.CahgeTurn()
+	m.UpdatePuttableIds()
 }
