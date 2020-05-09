@@ -12,6 +12,7 @@ import (
 type Board struct {
 	Table        [][]piece.Piece `json:"table"`
 	HoldingTable [][]piece.Piece `json:"holdingTable"`
+	TurnPlayerID int             `json:"turnPlayerId"`
 	pawnColumns  map[int]bool
 }
 
@@ -50,7 +51,7 @@ func Init() (b *Board, err error) {
 	if err = json.Unmarshal(f, b); err != nil {
 		return
 	}
-	b.UpdatePuttableIds(1)
+	b.UpdatePuttableIds()
 	return
 }
 
@@ -105,7 +106,7 @@ func (b *Board) setPuttableInfoByHolding(pi *piece.Piece) {
 }
 
 // UpdatePuttableIds はputtbleIdsを更新します
-func (b *Board) UpdatePuttableIds(playerID int) {
+func (b *Board) UpdatePuttableIds() {
 	for _, row := range b.Table {
 		for i := range row {
 			row[i].PuttableIds = []pieceid.PieceID{}
@@ -113,7 +114,7 @@ func (b *Board) UpdatePuttableIds(playerID int) {
 	}
 	for _, row := range b.Table {
 		for i := range row {
-			if row[i].PlayerID == playerID {
+			if row[i].PlayerID == b.TurnPlayerID {
 				m := row[i].GetMovablePoints()
 				b.setPuttableInfo(&m)
 			}
@@ -121,7 +122,7 @@ func (b *Board) UpdatePuttableIds(playerID int) {
 	}
 	b.setPawnColumns()
 	for id, row := range b.HoldingTable {
-		if id != playerID {
+		if id != b.TurnPlayerID {
 			continue
 		}
 		for _, p := range row {
