@@ -27,7 +27,8 @@ func (m *MoveInfo) prevPiece() (p piece.Piece) {
 	if m.IsHolding() {
 		pid := m.PieceID / 100
 		idx := m.PieceID % 100
-		p = m.Board.HoldingTable[pid][idx]
+		pidx := 2 - pid
+		p = m.Board.HoldingTable[pidx][idx]
 	} else {
 		y := m.GetY()
 		x := m.GetX()
@@ -62,7 +63,8 @@ func (m *MoveInfo) Move() {
 	if preP.IsHolding() {
 		pid := preP.PieceID / 100
 		idx := preP.PieceID % 100
-		m.HoldingTable[pid] = append(m.HoldingTable[pid][:idx], m.HoldingTable[pid][idx+1:]...)
+		pidx := 2 - pid
+		m.HoldingTable[pidx] = append(m.HoldingTable[pidx][:idx], m.HoldingTable[pidx][idx+1:]...)
 	} else {
 		m.SetEmptyPiece(preP.GetY(), preP.GetX())
 		if nxtP.Exist() {
@@ -121,13 +123,8 @@ func (b *Board) UpdatePuttableIds() {
 		}
 	}
 	b.setPawnColumns()
-	for id, row := range b.HoldingTable {
-		if id != b.TurnPlayerID {
-			continue
-		}
-		for _, p := range row {
-			b.setPuttableInfoByHolding(&p)
-		}
+	for _, p := range b.getHoldingTable(b.TurnPlayerID) {
+		b.setPuttableInfoByHolding(&p)
 	}
 }
 
@@ -150,4 +147,12 @@ func (b *Board) SetEmptyPiece(y, x int) {
 // CahgeTurn はプレイヤーのターンを切り替えます
 func (b *Board) CahgeTurn() {
 	b.TurnPlayerID = 3 - b.TurnPlayerID
+}
+
+func (b *Board) getHoldingTable(playeyID int) []piece.Piece {
+	idx := 1
+	if playeyID == 2 {
+		idx = 0
+	}
+	return b.HoldingTable[idx]
 }
